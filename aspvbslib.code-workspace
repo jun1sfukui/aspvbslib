@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+
+		"files.associations" : {
+			"*.inc": "asp",
+			"*.asp": "asp"
+		},
+		"files.encoding": "shiftjis",
+		"files.autoGuessEncoding": true,
+
+	},
+	
+}

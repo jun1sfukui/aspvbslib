@@ -1,3 +1,4 @@
+<% Option Explicit %>
 <!--#include file="./aspvbslib/adovbs.inc"-->
 <!--#include file="./aspvbslib/aspvbslib-core.inc"-->
 <!--#include file="./aspvbslib/aspvbslib-test.inc"-->

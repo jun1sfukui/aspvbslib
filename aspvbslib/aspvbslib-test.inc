@@ -16,7 +16,6 @@ Class UnitTest
 
 	Sub Class_Initialize
 		Set Asserts = New ArrayList
-		Position = 0
 	End Sub
 
 	Public Sub Add(funcName)

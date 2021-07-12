@@ -116,34 +116,34 @@ VBScriptにはラムダ式や関数オブジェクトがない為、文字列と
 以下のように、必要な機能のみをincludeして使用します。
 
 ## aspvbslib-coreのみ使用
-```Classic ASP
+```Classic-ASP
 <!--#include file="adovbs.inc"-->
 <!--#include file="aspvbslib-core.inc"-->
 ```
 
 ## aspvbslib-dataを使用
-```Classic ASP
+```Classic-ASP
 <!--#include file="adovbs.inc"-->
 <!--#include file="aspvbslib-core.inc"-->
 <!--#include file="aspvbslib-data.inc"-->
 ```
 
 ## aspvbslib-webを使用
-```Classic ASP
+```Classic-ASP
 <!--#include file="adovbs.inc"-->
 <!--#include file="aspvbslib-core.inc"-->
 <!--#include file="aspvbslib-web.inc"-->
 ```
 
 ## aspvbslib-testを使用
-```Classic ASP
+```Classic-ASP
 <!--#include file="adovbs.inc"-->
 <!--#include file="aspvbslib-core.inc"-->
 <!--#include file="aspvbslib-test.inc"-->
 ```
 
 ## 全て使用
-```Classic ASP
+```Classic-ASP
 <!--#include file="adovbs.inc"-->
 <!--#include file="aspvbslib-core.inc"-->
 <!--#include file="aspvbslib-data.inc"-->
@@ -357,7 +357,7 @@ Next
 
 ```VBScript
 Dim sortedList
-Set sortedList = list.OrderByAsc("list.empno")
+Set sortedList = list.OrderByAsc("item.empno")
 ```
 
 ### *ArrayList*.OrderByDesc(expr)
@@ -367,7 +367,7 @@ Set sortedList = list.OrderByAsc("list.empno")
 
 ```VBScript
 Dim sortedList
-Set sortedList = list.OrderByDesc("list.empno")
+Set sortedList = list.OrderByDesc("item.empno")
 ```
 
 ### *ArrayList*.FirstOrDefault(defaultValue)
@@ -845,11 +845,11 @@ HTMLテンプレート記述補助関数です。
 
 <%= %>と組み合わせて、HTMLテンプレート内で使用します。
 
-```Classic ASP
+```Classic-ASP
 <!-- dept.deptnoとreq.selectedDeptnoが一致する場合に "selected" を出力する -->
 <select name="selectedDeptno">
     <% Dim dept: For Each dept In departments.Items %>
-    <option <%= write_if("selected", dept.deptno = req.selectedDeptno) %>>
+    <option <%=write_if("selected", dept.deptno = req.selectedDeptno) %>>
     <% Next %>
 </select>
 ```
@@ -861,8 +861,8 @@ HTMLテンプレート記述補助関数です。
 
 <%= %>と組み合わせて、HTMLテンプレート内のstyle属性の中で使用します。
 
-```Classic ASP
-<div style="css_display(emp.empno > 0)">
+```Classic-ASP
+<div style="<%=css_display(emp.empno > 0)%>">
     <span><%=emp.Name%>
 </div>
 ```
@@ -874,8 +874,8 @@ HTMLテンプレート記述補助関数です。
 
 <%= %>と組み合わせて、HTMLテンプレート内のstyle属性の中で使用します。
 
-```Classic ASP
-<div style="css_visibility(emp.empno > 0)">
+```Classic-ASP
+<div style="<%=css_visibility(emp.empno > 0)%>">
     <span><%=emp.Name%>
 </div>
 ```
@@ -885,7 +885,7 @@ HTMLテンプレート記述補助関数です。
 
 HTMLの`<option>`要素を出力する専用のヘルパー関数です。`value`属性のリスト、見出し文字列のリスト、選択状態としたい`value`値、をそれぞれ渡します。
 
-```Classic ASP
+```Classic-ASP
 <select name="selectedCountry">
     <%=html_options(Array("US","JP","FR"), Array("米国", "日本", "フランス"), req.selectedCountry) %>
 </select>
